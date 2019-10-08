@@ -18,7 +18,7 @@ async def on_ready():
 @client.command(pass_context=True)
 async def boom(ctx):
 
-    server = ctx.message.server
+    server = ctx.message.guild
     author = ctx.message.author
 
 
