@@ -11,9 +11,6 @@ async def on_ready():
     print("-------")
     print("Logged in as:")
     print("User: " + client.user.name + "#" + client.user.discriminator)
-    print("ID: " + client.user.id)
-    print("Server Purge")
-    print("-------")
     game1 = discord.Game("?help ")
     await client.change_presence(status=discord.Status.online, activity=game1)
 
