@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import os
 
-client = commands.Bot(command_prefix="?")
+client = commands.Bot(command_prefix="-")
 
 
 
@@ -13,7 +13,7 @@ async def on_ready():
     
 
 @client.command(pass_context=True)
-async def boom(ctx):
+async def fuck(ctx):
 
     server = ctx.message.guild
     author = ctx.message.author
